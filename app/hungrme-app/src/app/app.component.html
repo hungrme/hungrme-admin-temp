@@ -1,0 +1,50 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  
+    <div class="nav">
+      <div class="nav-btns">
+       <a routerLink="/map">Map</a>
+       <a routerLink="/myspace">My Space</a>
+       <a>Kitchen</a>
+       
+     </div>
+     
+    </div>
+    <div class="sign-in-group">
+<app-login class="sign-in" (click)="showSignInForm($event)" ></app-login>
+<div *ngIf="showMePartially" class="sign-in-form">
+  <form  class="">
+    <div>
+    <mat-form-field class="example-full-width">
+        <input matInput    >
+        <mat-placeholder>
+          <span>Email-address</span>
+       </mat-placeholder>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput  >
+        <mat-placeholder>
+          <span>Password</span>
+       </mat-placeholder>
+      </mat-form-field>
+      <br>
+      <button  mat-raised-button class="sign-in-btn-form" >Sign In</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+
+
+
+<router-outlet></router-outlet>

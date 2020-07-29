@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/tabulator_modern.css">
+        <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        
+        
+    </head>
+<body>
+
+<h1>Admin</h1>
+
+
+
+<div class="container main-container" >
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Home</a>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="add-tab" data-toggle="tab" href="#add" role="tab" aria-controls="add"
+                aria-selected="false">Add / Edit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="edit-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="edit"
+                aria-selected="false"></a>
+            </li>
+          </ul>
+          <div>
+          </div>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div id="example-table"></div>
+        </div>
+            <div class="tab-pane fade" id="add" role="tabpanel" aria-labelledby="profile-tab">
+             <div>
+             <h3 class="branch-form-msg hidden">EDIT MODE</h3>
+             </div>
+              <form id="add-branch-form" >
+                <div class="row">
+
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <label for="branchid" class="">Branch ID</label>
+                          <input type="text" id="branchid" name="branchId" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <label for="branchname" class="">Branch Name</label>
+                          <input type="text" id="branchname" name="branchName" class="form-control">
+                      </div>
+                  </div>
+              </div>
+
+
+              <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <label for="merchantid" class="">Merchant ID</label>
+                        <input type="text" id="merchantid" name="merchantId" class="form-control">
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <label for="merchantname" class="">Merchant Name</label>
+                        <input type="text" id="merchantname" name="merchantName" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                  <div class="md-form mb-0">
+                      <label for="address" class="">Address</label>
+                      <input type="text" id="address" name="address" class="form-control">
+                  </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                  <div class="md-form mb-0">
+                      <label for="phone" class="">Phone</label>
+                      <input type="text" id="phone" name="phone" class="form-control">
+                  </div>
+              </div>
+          </div>
+
+          
+          <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-6">
+                <div class="md-form mb-0">
+                    <label for="xcoordinate" class="">X-Coor</label>
+                    <input type="text" id="xcoordinate" name="xCoordinate" class="form-control">
+                </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6">
+                <div class="md-form mb-0">
+                    <label for="ycoordinate" class="">Y-Coor</label>
+                    <input type="text" id="ycoordinate" name="yCoordinate" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-btns">
+                <button type="button"  id="add-branch-btn" class="btn btn-primary">Submit</button>
+                <button type="button"  id="update-branch-btn" class="btn btn-primary hidden  ">Update</button>
+            </div>    
+            </form>
+              
+                <div id="googleMap" style="width:100%;height:400px;"></div>
+              </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Etsy mixtape
+              wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
+              lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
+              locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
+              squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
+              etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
+              stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+          </div>
+    </div>
+</div>
+</div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlmZ2l8sWjxToSCxofR6ejXSEnLqLD8to&callback=myMap"></script>
+<script src="assets/js/tabulator.js" ></script>
+<script src="assets/js/tabulator_core.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+<script src="assets/js/main.js" ></script>
+
+
+</body>
+</html>

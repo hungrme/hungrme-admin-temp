@@ -1,0 +1,64 @@
+
+<div class="map-main">
+<agm-map [ngStyle]="{'height': hgt} "  
+  [latitude]="latitude"
+  [longitude]="longitude"
+  [zoom]="10"
+  [styles]="styles"
+>
+<agm-marker
+    *ngFor="let marker of markers"
+    [latitude]="marker.lat"
+    [longitude]="marker.lng"
+    [opacity]="marker.alpha"
+    [markerDraggable]="true"
+    (markerClick)="selectMarker($event)"
+  >
+  </agm-marker>
+  <agm-rectangle
+    [north]="max('lat')"
+    [east]="max('lng')"
+    [south]="min('lat')"
+    [west]="min('lng')"
+  >
+  </agm-rectangle>
+</agm-map>
+
+<div class="search-bar-main">
+  <div class="overlay"></div>
+  <mat-tab-group dynamicHeight="true" >
+    <mat-tab label="Anything">
+      <div class="center">
+      <form [formGroup]="searchForm" class="example-form">
+        <div>
+        <mat-form-field class="example-full-width">
+            <input matInput  formControlName="userName" (input)="onSearchChange($event.target.value)">
+            <mat-placeholder>
+              <span>{{startTypePlaceholder}}</span>
+           </mat-placeholder>
+          </mat-form-field>
+          <button  class="search-map-btn" changeText mat-button (click)="open($event)">Search !</button>
+        </div>
+      </form>
+     </div>
+    </mat-tab>
+    <mat-tab label="Restaurants">
+      <mat-form-field>
+        <input [formControl]="addressCompleteControl" type="text" placeholder="Pick one" aria-label="Number" matInput [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let item of addressAutoComplete$ | async; let index = index" [value]="item.branchName">
+            {{ item.branchName | titlecase}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-tab>
+
+    <mat-tab label="Price">
+      <h1>Some more tab content</h1>
+      <p>...</p>
+    </mat-tab>
+  </mat-tab-group>  
+  
+</div>
+
+</div>

@@ -1,0 +1,62 @@
+.search-bar-main{
+    height: 200px;
+    // background-image: linear-gradient(rgba(175, 31, 74, 0.719), white);
+    margin: 0px 80px;
+    position: relative;
+}
+
+.search-bar-main .overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  // background-image: url(../../assets/food.png);
+}
+
+.map-main{
+
+}
+
+.example-form {
+
+    width: 40%;
+
+
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+.mat-tab-label .mat-tab-label-content {
+
+    
+  font-family: lato;
+}
+
+
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-button{
+  width: 100%;
+}
+
+.mat-input-flex.mat-form-field-flex{
+  border: 1px solid black;
+}
+
+.agm-map-container-inner{
+  transition: height 0.2s ease-in-out;
+}

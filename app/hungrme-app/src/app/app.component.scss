@@ -1,0 +1,22 @@
+.example-form{
+    display: flex;
+    align-items: center;
+}
+
+.sign-in-form{
+    text-align: center;
+    width: 270px;
+}
+
+.sign-in-form mat-form-field{
+    color: white;
+    width: 90%;
+}
+
+.sign-in-btn-form{
+    border: none;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+}
